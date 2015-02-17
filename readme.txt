@@ -2,8 +2,11 @@ Group 6
 
 Python library used:
 
+BeautifulSoup - for parsing through HTML
 matplotlib - create the graph for negative sentiments
+nltk - for classifying people in the best dressed source
 numpy - return evenly spaced value within a given interval
+Tkinter - for displaying a GUI
 
 
 References:
