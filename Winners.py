@@ -351,13 +351,24 @@ def displayWinners(points, jsonDict, year):
 	if (jsonDict == {}):
 		metadata = {}
 		metadata["year"] = year
-		methodList = ["hosts","nominees","awards"]
-		method=      ["hardcoded","hardcoded","hardcoded"]
-		methodDescription = ["","",""]
+		metadata["names"] = {}
+		methodList = ["hosts","nominees","awards","presenters"]
+		method=      ["hardcoded","hardcoded","hardcoded","hardcoded"]
+		methodDescription = ["","","",""]
 		for index,word in enumerate(methodList):
-			metadata[word] = {}
-			metadata[word]["method"] = method[index]
-			metadata[word]["method_description"] = methodDescription[index]
+			metadata["names"][word] = {}
+			metadata["names"][word]["method"] = method[index]
+			metadata["names"][word]["method_description"] = methodDescription[index]
+		
+		metadata["mappings"] = {}
+		metadata["mappings"]["nominees"] = {}
+		metadata["mappings"]["presenters"] = {}
+		metadata["mappings"]["nominees"]["method"] = "detected"
+		metadata["mappings"]["nominees"]["method_description"] = ""
+		metadata["mappings"]["presenters"]["method"] = "detected"
+		metadata["mappings"]["presenters"]["method_description"] = ""
+
+
 		jsonDict["metadata"] = metadata
 
 		#load data field data here
